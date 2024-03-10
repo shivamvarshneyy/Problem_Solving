@@ -1,2 +1,0 @@
-# Problem_Solving
-swayam
