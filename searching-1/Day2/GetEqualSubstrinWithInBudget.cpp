@@ -21,7 +21,7 @@ public:
         cout<<subs(1,s,t,maxCost);
         while(st<e){
             int mid=st+(e-st)/2;
-            if(predicate(mid,s,t,maxCost)){
+            if(subs(mid,s,t,maxCost)){
                 st=mid+1;
             }else{
                 e=mid-1;
