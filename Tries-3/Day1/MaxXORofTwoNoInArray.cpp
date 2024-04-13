@@ -11,9 +11,9 @@ void insert(int a,Trie* root)
 {
     for(int i=31;i>=0;i--)
     {
-        bool b=((a>>i)&1);
-        if(root->children[b]==NULL) root->children[b]=new Trie();
-        root=root->children[b];
+        bool bit=((a>>i)&1);
+        if(root->children[bit]==NULL) root->children[bit]=new Trie();
+        root=root->children[bit];
     }
 }
 int query(int a,Trie* root)
@@ -21,12 +21,12 @@ int query(int a,Trie* root)
     int res=0;
     for(int i=31;i>=0;i--)
     {
-        bool b=((a>>i)&1);
-        if(root->children[1-b]!=NULL){
+        bool bit=((a>>i)&1);
+        if(root->children[1-bit]!=NULL){
             res+=(1<<i);
-            root=root->children[1-b];
+            root=root->children[1-bit];
         }
-        else root=root->children[b];
+        else root=root->children[bit];
     }
     return res;
 }
